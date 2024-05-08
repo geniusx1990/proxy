@@ -19,6 +19,12 @@ function createURL(baseURL, params) {
 }
 
 export default async function fetchMoviesByParams(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
+  res.setHeader("Access-Control-Allow-Methods", "GET");
+
+  res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type, Accept");
+
   if (req.method !== "GET") {
     res.status(405).json({ error: "Method not allowed" });
     return;

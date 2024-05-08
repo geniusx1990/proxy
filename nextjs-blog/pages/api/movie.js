@@ -7,6 +7,12 @@ const options = {
 };
 
 export default async function details(req, res) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
+  res.setHeader("Access-Control-Allow-Methods", "GET");
+
+  res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type, Accept");
+
   try {
     const { movie_id } = req.body;
     const response = await fetch(
