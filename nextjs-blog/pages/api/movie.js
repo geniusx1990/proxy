@@ -14,7 +14,7 @@ export default async function details(req, res) {
   res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type, Accept");
 
   try {
-    const { movie_id } = req.body;
+    const { movie_id } = req.query;
     const response = await fetch(
       `https://api.themoviedb.org/3/movie/${movie_id}`,
       options
